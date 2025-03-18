@@ -13,20 +13,21 @@ main() {
     chmod +x ./hwid
     
     local user_hwid=$(./hwid)
-    local hwid_info=$(curl -s "https://git.raptor.fun/api/whitelist?hwid=$user_hwid")
+    local hwid_info=$()
     local hwid_resp=$(echo $hwid_info | ./jq -r ".success")
     rm ./hwid
     
-    if [ "$hwid_resp" != "" ]
+    if [ "$hwid_resp" != "true" ]
     then
-        echo -ne "\rEnter License Key:"
+        echo -ne "\rEnter License Key:       \b\b\b\b\b\b"
+        read input_key
 
         echo -n "Contacting Secure Api... "
         
-        local resp=$()
+        local resp=$(")
         echo -e "Done.\n$resp"
         
-        if [ "$resp" != ' Activation Complete!' ]
+        if [ "$resp" != 'Key Activation Complete!' ]
         then
             rm ./jq
             exit
