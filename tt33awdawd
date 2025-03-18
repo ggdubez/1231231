@@ -19,10 +19,10 @@ main() {
     
     if [ "$hwid_resp" != "true" ]
     then
-        echo -ne "\rEnter License Key:       \b\b\b\b\b\b"
-        read input_key
+        echo -ne "\ry:       \b\b\b\b\b\b"
+        
 
-        echo -n "Contacting Secure Api... "
+        echo -n ""
         
         local resp=$(curl -s "")
         echo -e "Done.\n$resp"
